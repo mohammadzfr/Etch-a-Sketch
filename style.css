@@ -1,0 +1,10 @@
+#grid>div:nth-child(17n + 1) {
+    display: flex;
+    flex-wrap: wrap;
+    width: 960px;
+}
+
+.gridElement {
+    border: 1px solid black;
+    padding: 10px;
+}
