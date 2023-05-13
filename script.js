@@ -1,6 +1,7 @@
 const grid = document.getElementById('grid');
 const gridSizeBtn = document.getElementById('size');
-let gridElements = document.querySelectorAll('.gridElement'); 
+const colorPicker = document.getElementById('color');
+let gridElements;
 createGrid();
 gridElements.forEach(element => element.addEventListener('mouseover', changeColor));
 gridSizeBtn.addEventListener('click', function() {
@@ -21,10 +22,7 @@ function createGrid() {
     }
     else {
         size = arguments[0];
-        // grid.forEach(element => {
-        //     element.style.borderColor = "green"
-        // });
-        grid.innerHTML = '';
+        reset();
     }
 
     
@@ -37,13 +35,22 @@ function createGrid() {
             grid.appendChild(tempElement);
         }
     }
+
     grid.style.gridTemplateColumns = "repeat(" + size + ", 1fr)";
     gridElements = document.querySelectorAll('.gridElement'); 
+    gridElements.forEach(element => element.addEventListener('mouseover', changeColor));
     console.log(gridElements);
 }
 
+function reset() {
+    while (grid.firstChild) {
+        grid.removeChild(grid.lastChild);
+    }
+}
+
 function changeColor(element) {
-    console.log(element.target);
-    element.target.classList.add('colored');
+    console.log(colorPicker);
+    // element.target.classList.add('colored');
+    element.target.style.backgroundColor = colorPicker.value;
 }
 
