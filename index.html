@@ -8,14 +8,23 @@
     <title>Etch-a-Sketch</title>
 </head>
 <body>
-    <button id="size">Grid Size</button>
-    <button id="erase">Eraser</button>
-    <button id="erase">Toggle Grid Lines</button>
-    <div class="slidecontainer">
-        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+    <div class="buttons">
+        <!-- <button id="size">Grid Size</button> -->
+        <button id="eraser">Eraser</button>
+        <button id="clear">Clear Grid</button>
+
+        <input type="color" id="color">Select Color</input>
     </div>
-    <input type="color" id="color">Select Color</input>
-    <div id="grid"></div>
+    <div class="content">
+        <div class="modifiers">
+            <button id="toggle">Toggle Grid Lines</button>
+            <div class="slider">
+                <input type="range" min="1" max="100" value="16" class="slider" id="range-slider">
+                <p id="range-value"></p>
+            </div>
+        </div>
+        <div id="grid"></div>
+    </div>
+    <script src="script.js"></script>
 </body>
-<script src="script.js"></script>
 </html>

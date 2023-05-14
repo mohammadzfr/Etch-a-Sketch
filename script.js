@@ -1,12 +1,34 @@
+const slider = document.getElementById("range-slider");
+const output = document.getElementById("range-value");
+output.innerHTML = slider.value + " x " + slider.value;
+slider.oninput = function() {
+  output.innerHTML = this.value + " x " + this.value;
+  createGrid(this.value);
+}
+
 const grid = document.getElementById('grid');
 const gridSizeBtn = document.getElementById('size');
+const gridToggleBtn = document.getElementById('toggle');
+const eraserBtn = document.getElementById('eraser');
+const gridClearBtn = document.getElementById('clear');
 const colorPicker = document.getElementById('color');
 let gridElements;
 createGrid();
-gridElements.forEach(element => element.addEventListener('mouseover', changeColor));
-gridSizeBtn.addEventListener('click', function() {
-    createGrid(prompt("Enter size of new grid",16));
+// gridElements.forEach(element => element.addEventListener('mouseover', changeColor));
+// gridSizeBtn.addEventListener('click', function() {
+//     createGrid(prompt("Enter size of new grid",16));
+// });
+eraserBtn.addEventListener('click', function() {
+    document.getElementById('color').value = "#ffffff";
 });
+gridClearBtn.addEventListener('click', function() {
+    createGrid(slider.value);
+});
+// gridToggleBtn.addEventListener('click', function() {
+//     console.log("test");
+//     document.querySelectorAll('#grid>div').forEach(element => element.borderSize = '0px');
+//     document.querySelectorAll('#grid>div').borderSize = "0px";
+// });
 
 
 
@@ -24,8 +46,6 @@ function createGrid() {
         size = arguments[0];
         reset();
     }
-
-    
 
     //making grid
     for (i = 0; i < size; i++) {
@@ -49,7 +69,7 @@ function reset() {
 }
 
 function changeColor(element) {
-    console.log(colorPicker);
+    console.log(element.target);
     // element.target.classList.add('colored');
     element.target.style.backgroundColor = colorPicker.value;
 }

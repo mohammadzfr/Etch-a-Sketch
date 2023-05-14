@@ -11,3 +11,10 @@
 #grid>.colored {
     background-color: black;
   }
+.content {
+    display: flex;
+    align-items: center;
+}
+.modifiers {
+    text-align: center;
+}
