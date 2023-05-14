@@ -41,9 +41,9 @@ button, input {
   grid-template-columns: repeat(16, 1fr);
   box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;
 }
-/* #grid>div {
-    border: 1px solid rgba(0, 0, 0, 0.5);
-} */
+#grid>div {
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
 #grid>.colored {
     background-color: black;
   }
