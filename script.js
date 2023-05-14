@@ -1,8 +1,8 @@
 const slider = document.getElementById("range-slider");
 const output = document.getElementById("range-value");
-output.innerHTML = slider.value + " x " + slider.value;
+output.innerHTML = slider.value + "x" + slider.value;
 slider.oninput = function() {
-  output.innerHTML = this.value + " x " + this.value;
+  output.innerHTML = this.value + "x" + this.value;
   createGrid(this.value);
 }
 
@@ -24,11 +24,11 @@ eraserBtn.addEventListener('click', function() {
 gridClearBtn.addEventListener('click', function() {
     createGrid(slider.value);
 });
-// gridToggleBtn.addEventListener('click', function() {
-//     console.log("test");
-//     document.querySelectorAll('#grid>div').forEach(element => element.borderSize = '0px');
-//     document.querySelectorAll('#grid>div').borderSize = "0px";
-// });
+gridToggleBtn.addEventListener('click', function() {
+    console.log("test");
+    document.querySelectorAll('#grid>div').forEach(element => element.borderSize = '0px');
+    document.querySelectorAll('.gridElement').border = 'none';
+});
 
 
 
