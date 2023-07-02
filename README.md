@@ -1,5 +1,5 @@
 # Etch-a-Sketch
-Simple drawing project
+Simple drawing project (DONE!)
 ## Features
 - Scalable dimensions
 - any selection of colours
